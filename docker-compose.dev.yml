@@ -1,0 +1,14 @@
+version: "3"
+services:
+  nextjs-ui:
+    env_file:
+      - .env.development
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    container_name: swap-card-app
+    stdin_open: true
+    volumes:
+      - ./:/usr/src/app
